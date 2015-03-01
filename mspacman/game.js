@@ -15,7 +15,7 @@ function init() {
 			//blue board
 			game_ctx.drawImage(game_img, 322, 0, 464, 138, 0, 0, 464, 138);
 			//Ms PacMan
-	//		game_ctx.drawImage(game_img, 322, 0, 464, 138, 0, 0, 464, 138);
+			game_ctx.drawImage(game_img, 82, 23, 15, 15, 282, 55, 15, 15);
 		}, false)
 	}
 }
