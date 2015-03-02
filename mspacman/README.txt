@@ -9,6 +9,10 @@ HOURS: 2
 
 Last Updated: March 1, 2015
 
+VALIDATORS
+- http://www.jslint.com/#JSLINT_OPTIONS
+- http://www.javascriptlint.com/online_lint.php
+
 REFERENCES
 - http://www.techrepublic.com/article/preloading-and-the-javascript-image-object/  
 - http://www.thonky.com/javascript-and-css-guide/javascript-image-preload/
