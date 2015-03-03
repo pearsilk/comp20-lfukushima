@@ -17,5 +17,7 @@ function init() {
 			//Ms PacMan
 			game_ctx.drawImage(game_img, 82, 23, 15, 15, 282, 55, 15, 15);
 		}, false);
+	} else {
+		alert("Canvas is not supported by this browser!");
 	}
 }
