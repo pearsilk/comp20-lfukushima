@@ -7,7 +7,7 @@ I worked alone on this assignment
 
 HOURS: 2
 
-Last Updated: March 1, 2015
+Last Updated: March 3, 2015
 
 VALIDATORS
 - http://www.jslint.com/#JSLINT_OPTIONS
