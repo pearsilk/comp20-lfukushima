@@ -4,20 +4,21 @@
 
 body {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	text-align: center;
 }
 
 h1 {
 	position: absolute;
 	top: 5%;
+	text-align: center;
 }
 
 #messages {
 	position: absolute;
-	/*left: 25%;
-	right: 25%;*/
+	left: 25%;
+	right: 25%;
 	height: 80%;
 	width: 50%;
+	text-align: center;
 }
 
 .id {}
