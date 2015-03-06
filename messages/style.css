@@ -16,7 +16,7 @@ h1 {
 }
 
 p {
-	margin-bottom: 5%;
+	margin-bottom: 8%;
 }
 
 #messages {
@@ -36,13 +36,13 @@ p {
 	border-radius: 45% 12%;
 	border-color: blue;
 	border-style: double;
-	border-width: 3px;
+	border-width: 6px;
 }
 
 .content {
 	margin: 1%;
 	padding: 2%;
-	border-radius: 10%;
+	border-radius: 80%;
 	background-color: #99CCFF;
 }
 
