@@ -4,13 +4,13 @@
 
 h1 {}
 
-#messages {}
+#messages {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 
 .id {}
 
 .content {}
 
 .username {
-	font-variant: small-caps;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
