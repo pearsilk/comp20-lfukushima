@@ -31,20 +31,22 @@ p {
 
 .id {
 	font-size: 125%; 
-	border-radius: 45% 12%;
-	padding: 2%;
 	margin: 1%;
+	padding: 2%;
+	border-radius: 45% 12%;
 	background-color: blue;
 }
 
 .content {
-	padding: 1%;
-	border-radius: 20%;
-	box-shadow: none;
+	margin: 1%;
+	padding: 2%;
+	border-radius: 10%;
 	background-color: #99CCFF;
 }
 
 .username {
+	margin: 1%;
+	padding: 2%;
 	font-weight: lighter;
 	font-size: 88%;
 	font-style: italic;
