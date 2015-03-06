@@ -42,7 +42,7 @@ p {
 .content {
 	margin: 1%;
 	padding: 2%;
-	border-radius: 80%;
+	border-radius: 80px;
 	background-color: #99CCFF;
 }
 
