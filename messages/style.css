@@ -16,6 +16,7 @@ h1 {
 
 #messages {
 	position: absolute;
+	top: 20%;
 	left: 25%;
 	right: 25%;
 	height: 80%;
