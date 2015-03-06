@@ -12,7 +12,7 @@ function parse() {
 
 function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
-		console.log("checking for errors: ", request.readyState, " ", request.status);
+		console.log("ERROR: ready state = ", request.readyState, " status code = ", request.status);
 		var err_msg_block = document.getElementById("messages");
 		var err_msg = "Oh no! An error occurred . . . <p>ready state = " + request.readyState + "<p>status code = " + request.status;
 		err_msg_block.innerHTML = err_msg;
