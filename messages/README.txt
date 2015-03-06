@@ -1,0 +1,21 @@
+Lab 6 - Messages 
+COMP 20 (Spring 2015)
+Lisa Fukushima
+
+To my knowledge, I feel that everything has been correctly implemented.
+I worked alone on this assignment
+
+QUESTION: Is it possible to request the data from a different origin (e.g.,
+http://messagehub.herokuapp.com/) or from your local machine (from file:///)
+from using XMLHttpRequest? Why or why not? 
+--> ANSWER: 
+
+Last Updated: March 5, 2015
+
+HOURS: 
+
+VALIDATORS
+- http://www.jslint.com/#JSLINT_OPTIONS
+- http://www.javascriptlint.com/online_lint.php
+
+REFERENCES
