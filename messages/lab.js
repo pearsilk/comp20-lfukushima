@@ -12,10 +12,10 @@ function parse() {
 
 function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
-//		messages = document.getElementById("messages");
-//		messages.innerHTML = 
+		console.log("data successfully retrieved");
 		messages = JSON.parse(request.response);
-		console.log(messages[0]['content'], messages[1]['content']);
+		messages_block = document.getElementById("messages");
+		messages_block.innerHTML = messages[0]['content'] + " " +  messages[1]['content'];
 		console.log("data successfully parsed");
 	} else if (request.readyState == 4 && request.status != 200) {
 		console.log("ERROR: ready state = ", request.readyState, " status code = ", request.status);
