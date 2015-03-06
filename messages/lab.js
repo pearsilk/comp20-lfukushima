@@ -17,8 +17,8 @@ function parseData() {
 		var msg_style = "";
 		for (elem in messages) {
 			msg_style += '<p><span class = "id">' + messages[elem]['id']
-				     + '</span><span class = "content">' + messages[elem]['content']
-				     + '</span><span class = "username">' +  messages[elem]['username']
+				     + '</span> <span class = "content">' + messages[elem]['content']
+				     + '</span> <span class = "username">' +  messages[elem]['username']
 				     + '</span></p>';
 		}
 		msg_block = document.getElementById("messages");

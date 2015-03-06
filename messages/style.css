@@ -1,3 +1,16 @@
 /* stylesheet for messages lab */
 /* Lisa Fukushima              */
 /* COMP 20 - Spring 2015       */
+
+h1 {}
+
+#messages {}
+
+.id {}
+
+.content {}
+
+.username {
+	font-variant: small-caps;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
