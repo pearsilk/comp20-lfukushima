@@ -32,6 +32,7 @@ p {
 .id {
 	font-size: 125%; 
 	border-radius: 20% 5%;
+	padding: 2%;
 	background-color: blue;
 }
 
