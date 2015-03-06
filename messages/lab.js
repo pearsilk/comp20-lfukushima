@@ -13,9 +13,9 @@ function parse() {
 function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		console.log("checking for errors: ", request.readyState, " ", request.status);
-		var errmsgdiv = document.getElementsByTagName("h1");
-		var errmsg = "Oh no! An error occurred . . . <p>ready state = " + request.readyState + "<p>status code = " + request.status;
-		errmsgdiv.innerHTML = errmsg;
+		var err_msg_block = document.getElementById("messages");
+		var err_msg = "Oh no! An error occurred . . . <p>ready state = " + request.readyState + "<p>status code = " + request.status;
+		errmsgdiv.innerHTML = err_msg;
 	} //else if () {
 	//	alert("Oh no! An error occurred . . .");
 	//	console.log("ERROR: Ready State = ", );
