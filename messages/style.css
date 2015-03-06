@@ -46,7 +46,7 @@ p {
 	margin: 1%;
 	padding: 2%;
 	border-radius: 80px;
-	font-color: black;
+	color: black;
 	background-color: white;
 }
 
@@ -56,5 +56,7 @@ p {
 	font-weight: lighter;
 	font-size: 88%;
 	font-style: italic;
+	text-transform: lowercase;
+	font-variant: small-caps;
 }
 
