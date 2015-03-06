@@ -15,7 +15,7 @@ function parseData() {
 //		messages = document.getElementById("messages");
 //		messages.innerHTML = 
 		messages = JSON.parse(request.response);
-		console.log(messages);
+		console.log(messages[0]);
 		console.log("data successfully parsed");
 	} else if (request.readyState == 4 && request.status != 200) {
 		console.log("ERROR: ready state = ", request.readyState, " status code = ", request.status);
