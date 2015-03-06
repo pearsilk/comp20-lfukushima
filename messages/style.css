@@ -4,7 +4,7 @@
 
 body {
 	position: absolute;
-	height: 10%;
+	top: 10%;
 	left: 50%;
 	right: 50%;
 }
@@ -12,6 +12,8 @@ body {
 h1 {}
 
 #messages {
+	height: 80%;
+	width: 50%;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
