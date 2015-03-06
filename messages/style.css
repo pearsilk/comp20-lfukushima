@@ -54,7 +54,6 @@ p {
 .username {
 	margin: 1%;
 	padding: 2%;
-	font-weight: lighter;
 	font-style: italic;
 	text-transform: lowercase;
 	font-variant: small-caps;
