@@ -14,7 +14,7 @@ function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		console.log("data successfully retrieved");
 		messages = JSON.parse(request.response);
-		var msg_style;
+		var msg_style = "";
 		for (elem in messages) {
 			msg_style += '<p><span class = "id">' + messages[elem]['id'] + '</span><span class = "content">' + messages[elem]['content']
 				     + '</span><span class = "username">' +  messages[elem]['username'] + '</span></p>' 
