@@ -34,7 +34,9 @@ p {
 	margin: 1%;
 	padding: 2%;
 	border-radius: 45% 12%;
-	background-color: blue;
+	border-color: blue;
+	border-style: double;
+	border-width: 3px;
 }
 
 .content {
