@@ -32,7 +32,7 @@ p {
 .id {
 	font-size: 125%; 
 	border-radius: 45% 15%;
-	padding: 1%;
+	padding: 2%;
 	margin: 1%;
 	background-color: blue;
 }
@@ -43,6 +43,8 @@ p {
 }
 
 .username {
-	font-variant: unicase;
+	font-weight: lighter;
+	font-size: 80%;
+	font-style: italic;
 }
 
