@@ -2,6 +2,13 @@
 /* Lisa Fukushima              */
 /* COMP 20 - Spring 2015       */
 
+body {
+	position: absolute;
+	height: 10%;
+	left: 50%;
+	right: 50%;
+}
+
 h1 {}
 
 #messages {
