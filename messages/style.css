@@ -9,11 +9,13 @@ body {
 h1 {
 	position: absolute;
 	top: 5%;
+	left: 25%;
+	right: 25%;
 	text-align: center;
 }
 
 #messages {
-	position: absolute;
+	/*position: absolute;*/
 	left: 25%;
 	right: 25%;
 	height: 80%;
