@@ -13,7 +13,9 @@ function parse() {
 function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		console.log("checking for errors: ", request.readyState, " ", request.status);
+		alert("checking for errors: ", request.readyState, " ", request.status);
 	} //else if () {
-	//	console.log();
+	//	alert("Oh no! An error occurred . . .");
+	//	console.log("ERROR: Ready State = ", );
 	//}
 }
