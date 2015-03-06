@@ -10,6 +10,6 @@ function parse() {
 	request.send();
 }
 
-function parseData {
+function parseData() {
 	console.log("checking for errors");
 }
