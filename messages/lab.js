@@ -14,8 +14,12 @@ function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		console.log("data successfully retrieved");
 		messages = JSON.parse(request.response);
-		messages_block = document.getElementById("messages");
-		messages_block.innerHTML = messages[0]['content'] + " " +  messages[1]['content'];
+		for (elem in messages) {
+			msg_style += '<p><span class = "id">' + messages[elem]['id'] + '</span><span class = "content">' + messages[elem]['content']
+				     + '</span><span class = "username">' +  messages[elem]['username'] + '</span></p>' 
+		}
+		msg_block = document.getElementById("messages");
+		msg_block.innerHTML = msg_style;
 		console.log("data successfully parsed");
 	} else if (request.readyState == 4 && request.status != 200) {
 		console.log("ERROR: ready state = ", request.readyState, " status code = ", request.status);
