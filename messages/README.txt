@@ -10,12 +10,17 @@ http://messagehub.herokuapp.com/) or from your local machine (from file:///)
 from using XMLHttpRequest? Why or why not? 
 --> ANSWER: 
 
-Last Updated: March 5, 2015
+Last Updated: March 6, 2015
 
-HOURS: 
+HOURS: 4
 
 VALIDATORS
 - http://www.jslint.com/#JSLINT_OPTIONS
 - http://www.javascriptlint.com/online_lint.php
 
 REFERENCES
+- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+- http://www.w3schools.com/js/js_loop_for.asp
+- http://overapi.com/css/
+- http://davidwalsh.name/css-circles
+- https://css-tricks.com/almanac/properties/b/border-radius/
