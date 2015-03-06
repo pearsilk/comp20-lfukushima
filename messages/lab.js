@@ -13,7 +13,7 @@ function parse() {
 function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		console.log("checking for errors: ", request.readyState, " ", request.status);
-		var errmsgdiv = document.getElementById("messages");
+		var errmsgdiv = document.getElementsByTagName("h1");
 		var errmsg = "Oh no! An error occurred . . . <p>ready state = " + request.readyState + "<p>status code = " + request.status;
 		errmsgdiv.innerHTML = errmsg;
 	} //else if () {
