@@ -4,6 +4,8 @@
 
 body {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background-color: black;
+	font-color: white;
 }
 
 h1 {
@@ -34,7 +36,7 @@ p {
 	margin: 1%;
 	padding: 2%;
 	border-radius: 45% 12%;
-	border-color: blue;
+	border-color: white;
 	border-style: double;
 	border-width: 6px;
 }
@@ -43,7 +45,8 @@ p {
 	margin: 1%;
 	padding: 2%;
 	border-radius: 80px;
-	background-color: #99CCFF;
+	font-color: black;
+	background-color: white;
 }
 
 .username {
