@@ -15,7 +15,7 @@ function parseData() {
 		console.log("checking for errors: ", request.readyState, " ", request.status);
 		var err_msg_block = document.getElementById("messages");
 		var err_msg = "Oh no! An error occurred . . . <p>ready state = " + request.readyState + "<p>status code = " + request.status;
-		errmsgdiv.innerHTML = err_msg;
+		err_msg_block.innerHTML = err_msg;
 	} //else if () {
 	//	alert("Oh no! An error occurred . . .");
 	//	console.log("ERROR: Ready State = ", );
