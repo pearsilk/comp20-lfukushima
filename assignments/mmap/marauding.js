@@ -35,7 +35,7 @@ function unfoldMap() {
 
 	map = new google.maps.Map(document.getElementById('marauders-map'), map_options);
 
-	findMyPos(); // next step
+	findMyPos(); // STEP 2
 }
 
 /***********************/
@@ -45,7 +45,7 @@ function unfoldMap() {
 function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
 		navigator.geolocation.getCurrentPosition(defineMyPos);
-		//something
+		updateDataFeed(); // STEP 3
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
