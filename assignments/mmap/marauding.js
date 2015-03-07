@@ -12,6 +12,6 @@ var mapOptions = {
 
 function unfoldMap() {
 	console.log("Before map");
-	map = new google.maps.Map(document.getElementById('marauders-map'), mapOptions);
+	map = new google.maps.Map(document.getElementById("marauders-map"), mapOptions);
 	console.log("After map");
 }

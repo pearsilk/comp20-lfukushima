@@ -1,1 +1,25 @@
-/* empty CSS file for now . . . */
+/* stylesheet for Marauder's Map       */
+/* assignment 2, COMP 20 - Spring 2015 */
+/* Lisa Fukushima                      */
+/* Last updated: March 7, 2015         */
+
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#marauders-map {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
