@@ -64,7 +64,7 @@ function defineMyPos(my_pos) {
 /***** THIRD STEP *****/
 
 /* sending and retrieving data from datastore */
-function updateDataFeed() {
+/*function updateDataFeed() {
 	my_data = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
 	pos_reqs = new XMLHttpRequest();
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
@@ -74,9 +74,9 @@ function updateDataFeed() {
 	console.log(my_data);
 	pos_reqs.send(my_data);
 }
-
+*/
 /* parse the JSON data retrieved from datastore */
-function parseData() {
+/*function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 	//	pos_data = pos_reqs.responseText;
 	//	console.log(pos_data);
@@ -88,7 +88,7 @@ function parseData() {
 	}	
 }
 
-
+*/
 
 
 
