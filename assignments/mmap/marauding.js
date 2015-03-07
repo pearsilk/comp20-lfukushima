@@ -67,13 +67,14 @@ function defineMyPos(my_pos) {
 /* sending and retrieving data from datastore */
 function updateDataFeed() {
 	my_data = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
-	//pos_reqs = new XMLHttpRequest();
-	//pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
-	//pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	console.log(my_data);
+	pos_reqs = new XMLHttpRequest();
+	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
+	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 	//pos_reqs.onreadystatechange = parseData;
-	console.log(my_data);
-	//pos_reqs.send(my_data);
+	pos_reqs.send(my_data);
+	console.log("finished update feed");
 }
 
 /* parse the JSON data retrieved from datastore */
