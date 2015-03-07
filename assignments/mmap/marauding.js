@@ -11,7 +11,7 @@
 // - display other people's location logins w/ mile(s) away-ness
 
 
-// initializing and loading map
+/* initializing and loading map */
 var map;
 function unfoldMap() {
 	var map_options = {
@@ -22,7 +22,7 @@ function unfoldMap() {
 	map = new google.maps.Map(document.getElementById('marauders-map'), map_options);
 }
 
-// getting my coordinates
+/* getting my coordinates */
 var my_pos;
 function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
@@ -36,10 +36,12 @@ function findMyPos() {
 	}
 }
 
+/* 'success' callback function for getCurrentPosition() */
 function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
-	console.log("My lat: " + my_lat " and my lng: " + my_lng);
+	var msg = "My lat: " + my_lat " and my lng: " + my_lng;
+	console.log(msg);
 }
 
 
