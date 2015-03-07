@@ -36,16 +36,17 @@ function unfoldMap() {
 
 	map = new google.maps.Map(document.getElementById('marauders-map'), map_options);
 
-//	findMyPos(); // STEP 2
+	findMyPos(); // STEP 2
 }
 
 /***********************/
 /***** SECOND STEP *****/
 
 /* getting my coordinates */
-/*function findMyPos() {
+function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
-		navigator.geolocation.getCurrentPosition(defineMyPos);
+		console.log("got here");
+//		navigator.geolocation.getCurrentPosition(defineMyPos);
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
