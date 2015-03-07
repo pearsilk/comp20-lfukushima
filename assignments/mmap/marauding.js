@@ -72,13 +72,13 @@ function updateDataFeed() {
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	//pos_reqs.onreadystatechange = parseData;
+	pos_reqs.onreadystatechange = parseData;
 	pos_reqs.send(my_data);
 	console.log("finished update feed");
 }
 
 /* parse the JSON data retrieved from datastore */
-/*function parseData() {
+function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 	//	pos_data = pos_reqs.responseText;
 	//	console.log(pos_data);
@@ -90,7 +90,6 @@ function updateDataFeed() {
 	}	
 }
 
-*/
 
 
 
