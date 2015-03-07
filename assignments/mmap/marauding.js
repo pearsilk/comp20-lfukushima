@@ -14,6 +14,7 @@
 /* initializing and loading map */
 var map;
 function unfoldMap() {
+	var tufts = new google.maps.LatLng(42.407484, -71.119023);
 	var map_options = {
 		center: tufts,
 		zoom: 8
