@@ -7,6 +7,8 @@
 // - CHECK load map
 // - CHECK get my coords. using nav.geo
 // - send my coord. to database using XMLHttpRequest
+// - get data back
+// - parse said data
 // - display my location w/ image of my choice w/ note of login
 // - display other people's location logins w/ mile(s) away-ness
 
@@ -15,11 +17,10 @@
 /*********************/
 /***** VARIABLES *****/
 var map;
-var my_pos;
-var my_lat, my_lng;
+var my_pos, my_lat, my_lng;
 var my_login = "MarkStruthers";
 var my_info = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
-var pos_info;
+var pos_reqs, pos_data;
 
 
 /**********************/
@@ -64,17 +65,25 @@ function defineMyPos(my_pos) {
 
 /* sending and retrieving info from datastore */
 function updateDataFeed() {
-	pos_info = new XMLHttpRequest();
-	pos_info.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
-	pos_info.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	pos_reqs = new XMLHttpRequest();
+	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
+	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	pos_info.onreadystatechange = parseData;
-	pos_info.send(my_info);
+	pos_reqs.onreadystatechange = parseData;
+	console.log(my_info);
+	pos_reqs.send(my_info);
 }
 
 /* parse the JSON data retrieved from datastore */
 function parseData() {
-	console.log("Got here!");
+	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
+		pos_data = pos_reqs.responseText;
+		console.log(pos_data);
+	} else {
+		alert("Oh no, an error occurred!");
+		console.warn("ERROR: ready state = " + pos_reqs.readyState +
+			     "; status = " + pos_reqs.status);
+	}	
 }
 
 
