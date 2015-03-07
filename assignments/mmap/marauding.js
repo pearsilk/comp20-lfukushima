@@ -51,7 +51,7 @@ function findMyPos() {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
 }
-*/
+
 /* 'success' callback function for getCurrentPosition() */
 /*function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
