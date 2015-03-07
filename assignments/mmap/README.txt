@@ -5,7 +5,7 @@ Lisa Fukushima
 Completed:
 Last Updated: 
 
-HOURS: 
+HOURS: 5.5 so far...
 
 As far as I know, I feel that everything has been implemented correctly.
 I worked on this assignment alone.
