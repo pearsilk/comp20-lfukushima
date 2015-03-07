@@ -71,8 +71,8 @@ function updateDataFeed() {
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 	pos_reqs.onreadystatechange = parseData;
-	console.log(my_info);
-	pos_reqs.send(my_info);
+	console.log(my_data);
+	pos_reqs.send(my_data);
 }
 
 /* parse the JSON data retrieved from datastore */
