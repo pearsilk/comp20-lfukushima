@@ -46,21 +46,21 @@ function unfoldMap() {
 function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
 		console.log("got here");
-//		navigator.geolocation.getCurrentPosition(defineMyPos);
+		navigator.geolocation.getCurrentPosition(defineMyPos);
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
 }
 
 /* 'success' callback function for getCurrentPosition() */
-/*function defineMyPos(my_pos) {
-	my_lat = my_pos.coords.latitude;
-	my_lng = my_pos.coords.longitude;
+function defineMyPos(my_pos) {
+	//my_lat = my_pos.coords.latitude;
+	//my_lng = my_pos.coords.longitude;
 	//updateDataFeed(); // STEP 3
-	var msg = "My lat: " + my_lat + " and my lng: " + my_lng;
-	console.log(msg);
+	//var msg = "My lat: " + my_lat + " and my lng: " + my_lng;
+	console.log("got here");
 }
-*/
+
 /**********************/
 /***** THIRD STEP *****/
 
