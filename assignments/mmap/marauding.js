@@ -55,7 +55,7 @@ function findMyPos() {
 function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
-	updateDataFeed(); // STEP 3
+	//updateDataFeed(); // STEP 3
 	var msg = "My lat: " + my_lat + " and my lng: " + my_lng;
 	console.log(msg);
 }
@@ -70,7 +70,7 @@ function updateDataFeed() {
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	pos_reqs.onreadystatechange = parseData;
+	//pos_reqs.onreadystatechange = parseData;
 	console.log(my_data);
 	pos_reqs.send(my_data);
 }
