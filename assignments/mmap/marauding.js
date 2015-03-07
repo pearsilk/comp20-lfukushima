@@ -45,7 +45,6 @@ function unfoldMap() {
 /* getting my coordinates */
 function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
-		console.log("got here");
 		navigator.geolocation.getCurrentPosition(defineMyPos);
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
@@ -80,8 +79,8 @@ function updateDataFeed() {
 /* parse the JSON data retrieved from datastore */
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
-	//	pos_data = pos_reqs.responseText;
-	//	console.log(pos_data);
+		pos_data = pos_reqs.responseText;
+		alert(pos_data);
 		console.log("got here");
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
