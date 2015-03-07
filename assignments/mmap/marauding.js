@@ -19,7 +19,7 @@
 var map;
 var my_pos, my_lat, my_lng;
 var my_login = "MarkStruthers";
-var my_info = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
+var my_data;
 var pos_reqs, pos_data;
 
 
@@ -63,8 +63,9 @@ function defineMyPos(my_pos) {
 /**********************/
 /***** THIRD STEP *****/
 
-/* sending and retrieving info from datastore */
+/* sending and retrieving data from datastore */
 function updateDataFeed() {
+	my_data = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
 	pos_reqs = new XMLHttpRequest();
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -79,10 +80,10 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = pos_reqs.responseText;
 		console.log(pos_data);
-	} else {
+	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
 		console.warn("ERROR: ready state = " + pos_reqs.readyState +
-			     "; status = " + pos_reqs.status);
+			     ", status = " + pos_reqs.status);
 	}	
 }
 
