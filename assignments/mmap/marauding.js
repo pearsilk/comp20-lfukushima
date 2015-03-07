@@ -46,10 +46,6 @@ function unfoldMap() {
 function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
 		navigator.geolocation.getCurrentPosition(defineMyPos);
-		while (my_lat == undefined && my_lng == undefined) {
-			console.log("retrieving coordinates...");
-		}
-		updateDataFeed(); // STEP 3
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
@@ -59,6 +55,7 @@ function findMyPos() {
 function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
+	updateDataFeed(); // STEP 3
 	var msg = "My lat: " + my_lat + " and my lng: " + my_lng;
 	console.log(msg);
 }
