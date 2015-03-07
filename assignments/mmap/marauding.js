@@ -43,8 +43,8 @@ function findMyPos() {
 function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
-	//var msg = "My lat: " + my_lat " and my lng: " + my_lng;
-	//console.log(msg);
+	var msg = "My lat: " + my_lat " and my lng: " + my_lng;
+	console.log(msg);
 }
 
 
