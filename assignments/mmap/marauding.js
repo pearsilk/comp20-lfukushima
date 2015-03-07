@@ -4,14 +4,12 @@
 // March 6, 2015
 
 var map;
-var tufts = new google.maps.LatLng(42.407484, -71.119023);
-var mapOptions = {
-	center: tufts,
-	zoom: 8
-};
-
 function unfoldMap() {
-	console.log("Before map");
-	map = new google.maps.Map(document.getElementById("marauders-map"), mapOptions);
-	console.log("After map");
+	var tufts = new google.maps.LatLng(42.407484, -71.119023);
+	var mapOptions = {
+		center: tufts,
+		zoom: 8
+	};
+
+	map = new google.maps.Map(document.getElementById('marauders-map'), mapOptions);
 }
