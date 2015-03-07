@@ -21,6 +21,8 @@ function unfoldMap() {
 	};
 
 	map = new google.maps.Map(document.getElementById('marauders-map'), map_options);
+
+	findMyPos();
 }
 
 /* getting my coordinates */
