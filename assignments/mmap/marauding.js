@@ -36,30 +36,30 @@ function unfoldMap() {
 
 	map = new google.maps.Map(document.getElementById('marauders-map'), map_options);
 
-	findMyPos(); // STEP 2
+//	findMyPos(); // STEP 2
 }
 
 /***********************/
 /***** SECOND STEP *****/
 
 /* getting my coordinates */
-function findMyPos() {
+/*function findMyPos() {
 	if (navigator.geolocation) { // check for geolocation support
 		navigator.geolocation.getCurrentPosition(defineMyPos);
 	} else {
 		alert("It appears that your browser does not support geolocation. Bummer.");
 	}
 }
-
+*/
 /* 'success' callback function for getCurrentPosition() */
-function defineMyPos(my_pos) {
+/*function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
 	//updateDataFeed(); // STEP 3
 	var msg = "My lat: " + my_lat + " and my lng: " + my_lng;
 	console.log(msg);
 }
-
+*/
 /**********************/
 /***** THIRD STEP *****/
 
