@@ -27,6 +27,7 @@ var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
 var my_info, my_data;
 var my_mark, my_window;
+var other_mark, other_window;
 var mmap;
 var mmap_options = { zoom: 15 };
 var pos_reqs, pos_data;
@@ -86,7 +87,7 @@ function parseData() {
 			if (elem == 0) {
 				displayMyPos();
 			} else {
-		//		displayOtherPos(elem);
+				displayOtherPos(elem);
 			}
 		}
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
@@ -145,24 +146,23 @@ function displayMyPos() {
 }
 
 function displayOtherPos(elem) {
-	/*var content_html = '<div class="infowindow">' +
-			   '<h3>' + my_data["login"] + '</h3>' +
+	var content_html = '<div class="infowindow">' +
+			   '<h3>' + pos_data[elem]["login"] + '</h3>' +
 			   '<p>last login: ' + date + ' at ' + time + '</p>' +
 			   '</div>';
 
-	my_mark = new google.maps.Marker({
-		position: new google.maps.LatLng(my_data["lat"], my_data["lng"]),
+	other_mark = new google.maps.Marker({
+		position: new google.maps.LatLng(pos_data[elem]["lat"], pos_data[elem]["lng"]),
 		map: mmap,
-		icon: my_icon,
 	});
-
-	my_window = new google.maps.InfoWindow({
+//add miles away
+	other_window = new google.maps.InfoWindow({
 		content: content_html
 	});
 
-	google.maps.event.addListener(my_mark, "click", function() {
-		my_window.open(mmap, my_mark);
+	google.maps.event.addListener(other_mark, "click", function() {
+		my_window.open(mmap, other_mark);
 	});
-*/}
+}
 
 
