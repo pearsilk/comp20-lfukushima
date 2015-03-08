@@ -24,7 +24,6 @@ var my_pos, position;
 var my_login = "MarkStruthers";
 var my_icon = {
 	url: "./takanoha.png",
-	size: new google.maps.Size(20, 20),
 	origin: new google.maps.Point(0, 0),
 	anchor: new google.maps.Point(10, 10)
 };
