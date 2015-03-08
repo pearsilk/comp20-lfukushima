@@ -59,7 +59,7 @@ function defineMyPos(position) {
 	my_lat = position.coords.latitude;
 	my_lng = position.coords.longitude;
 	my_pos = new google.maps.LatLng(my_lat, my_lng);
-	mmap.setCenter(my_pos); // center map on my position
+	mmap.setCenter(my_pos); // center and load map on my position
 	updateDataFeed();
 }
 
@@ -98,7 +98,28 @@ function parseData() {
 
 /* displaying my marker and info window on the map */
 function displayMyPos() {
-	var content_html = '<div class="infowindow">' +
+	var split_data = my_data["created_at"].split("T");
+	console.log(split_data[0] + " " + split_data[1]);
+	/*var year = split_data[0] + split_data[1] + split_data[2] + split_data[3];
+	var day = split_data[8] + split_data[9];
+	var month;
+	switch (split_data[5] + split_data[6]) {
+		case "01": month = "Jan"; break;
+		case "02": month = "Feb"; break;
+		case "03": month = "Mar"; break;
+		case "04": month = "Apr"; break;
+		case "05": month = "May"; break;
+		case "06": month = "Jun"; break;
+		case "07": month = "Jul"; break;
+		case "08": month = "Aug"; break;
+		case "09": month = "Sep"; break;
+		case "10": month = "Oct"; break;
+		case "11": month = "Nov"; break;
+		case "12": month = "Dec"; break;
+	}
+	var date = month + " " + day + ", " + year;
+	var time = ;
+	*/var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
 			   '<p>last login: ' + my_data["created_at"] + '</p>' +
 			   '</div>';
