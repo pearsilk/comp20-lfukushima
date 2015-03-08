@@ -16,11 +16,17 @@
 
 /*********************/
 /***** VARIABLES *****/
-var mmap;
-var my_pos, my_lat, my_lng;
+var my_lat = 0;
+var my_lng = 0;
+var my_pos = new google.maps.LatLng(my_lat, my_lng);
 var my_login = "MarkStruthers";
 var my_data;
 var my_mark;
+var mmap;
+var map_options = {
+	center: my_pos,
+	zoom: 8
+};
 var pos_reqs, pos_data;
 
 
@@ -29,14 +35,8 @@ var pos_reqs, pos_data;
 
 /* initializing and loading mmap */
 function unfoldMap() {
-	findMyPos(); // STEP 2
-	alert(my_lat + ", " + my_lng);
-	my_pos = new google.maps.LatLng(my_lat, my_lng);
-	var map_options = {
-		center: my_pos,
-		zoom: 15
-	};
 	mmap = new google.maps.Map(document.getElementById('marauders-map'), map_options);
+	findMyPos(); // STEP 2
 }
 
 /***********************/
