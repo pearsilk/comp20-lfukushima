@@ -77,11 +77,11 @@ function updateDataFeed() {
 }
 
 /* parse the JSON data retrieved from datastore */
+var split_data, date, year, month, day, time;
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		var split_data, date, year, month, day, time;
 		if (parseLastLogin) { // workaround to make displayMyPos wait till parsing is done
 			displayMyPos();
 		}
