@@ -8,6 +8,9 @@
 // - CHECK get my coords. using nav.geo
 // - CHECK send my coord. to database using XMLHttpRequest
 // - CHECK get data back
+// - make unique MARKER w/ image of choice
+// -- CHECK step1: make marker
+// -- step2: customize)
 // - parse said data
 // - display my location w/ image of my choice w/ note of login
 // - display other people's location logins w/ mile(s) away-ness
@@ -19,6 +22,7 @@
 var my_lat, my_lng;
 var my_pos, position;
 var my_login = "MarkStruthers";
+var my_icon = "./takanoha.png";
 var my_data;
 var my_mark;
 var mmap;
@@ -78,6 +82,7 @@ function parseData() {
 		my_mark = new google.maps.Marker({
 			position: my_pos,
 			map: mmap,
+			icon: my_icon,
 			title: "BOO",
 			content: "foo!"
 		});
@@ -85,7 +90,6 @@ function parseData() {
 		for (elem in pos_data) {
 			console.log(pos_data[elem]['login']);
 		}
-		// - make unique MARKER w/ image of choice (step1: make marker; step2: customize)
 		// - INFO WINDOW w/ note of login 
 //		alert(pos_data);
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
