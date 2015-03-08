@@ -22,7 +22,7 @@
 var my_lat, my_lng;
 var my_pos, position;
 var my_login = "MarkStruthers";
-var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
+var my_icon = "./takanoha.png"; // this is my family crest, I really like it 
 var my_data;
 var my_mark;
 var mmap;
