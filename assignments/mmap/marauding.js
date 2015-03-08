@@ -81,8 +81,10 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		
-		displayMyPos();
+		var split_data, date, year, month, day, time;
+		if (parseLastLogin) { // workaround to make displayMyPos wait till parsing is done
+			displayMyPos();
+		}
 //		displayOtherPos();
 
 	//	for (elem in pos_data) {
@@ -96,13 +98,13 @@ function parseData() {
 	}	
 }
 
-/* displaying my marker and info window on the map */
-function displayMyPos() {
-	var split_data = my_data["created_at"].split("T");
-	var date = split_data[0].split("-");
-	var year = date[0];
-	var day = date[2];
-	var month = date[1]; 
+/* parse value associated with key 'created_at' */
+function parseLastLogin() {
+	split_data = my_data["created_at"].split("T");
+	date = split_data[0].split("-");
+	year = date[0];
+	day = date[2];
+	month = date[1]; 
 	switch (month) {
 		case "01": month = "Jan"; break;
 		case "02": month = "Feb"; break;
@@ -119,6 +121,11 @@ function displayMyPos() {
 	}
 	date = month + " " + day + ", " + year;
 //	var time = ;
+	return true;
+}
+
+/* displaying my marker and info window on the map */
+function displayMyPos() {
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
 			   '<p>last login: ' + date + '</p>' +
@@ -138,8 +145,6 @@ function displayMyPos() {
 		my_window.open(mmap, my_mark);
 	});
 }
-
-
 
 
 
