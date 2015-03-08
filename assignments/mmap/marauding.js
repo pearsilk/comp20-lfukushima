@@ -30,7 +30,7 @@ var pos_reqs, pos_data;
 /* initializing and loading mmap */
 function unfoldMap() {
 	findMyPos(); // STEP 2
-	console.log(my_lat + my_lng);
+	alert(my_lat + ", " + my_lng);
 	my_pos = new google.maps.LatLng(my_lat, my_lng);
 	var map_options = {
 		center: my_pos,
