@@ -96,14 +96,15 @@ function parseData() {
 	}	
 }
 
+/* displaying my marker and info window on the map */
 function displayMyPos() {
 	var content_html = '<div class="infowindow">' +
-			   '<h3>' + my_login + '</h3>' +
+			   '<h3>' + my_data["login"] + '</h3>' +
 			   '<p>last login: ' + my_data["created_at"] + '</p>' +
 			   '</div>';
 
 	my_mark = new google.maps.Marker({
-		position: my_pos,
+		position: new google.maps.LatLng(my_data["lat"], my_data["lng"]),
 		map: mmap,
 		icon: my_icon,
 	});
