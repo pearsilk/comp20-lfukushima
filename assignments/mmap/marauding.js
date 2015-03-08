@@ -80,10 +80,8 @@ function updateDataFeed() {
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
-		var split_data, date, year, month, day, time;
 		for (elem in pos_data) {
-			parseLastLogin(elem, split_data, date, year, month, day, time);
-			displayPos(elem, date, time);
+			displayPos(elem);
 		}
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
@@ -141,7 +139,9 @@ function parseLastLogin(elem, split_data, date, year, month, day, time) {
 }
 */
 
-function displayPos(elem, date, time) {
+function displayPos(elem) {
+	var split_data, date, year, month, day, time;
+	parseLastLogin(elem, split_data, date, year, month, day, time);
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + pos_data[elem]["login"] + '</h3>' +
 			   '<p>last login: ' + date + ' at ' + time + '</p>' +
