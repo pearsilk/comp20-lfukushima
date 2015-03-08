@@ -99,11 +99,11 @@ function parseData() {
 /* displaying my marker and info window on the map */
 function displayMyPos() {
 	var split_data = my_data["created_at"].split("T");
-	console.log(split_data[0] + " " + split_data[1]);
-	/*var year = split_data[0] + split_data[1] + split_data[2] + split_data[3];
-	var day = split_data[8] + split_data[9];
-	var month;
-	switch (split_data[5] + split_data[6]) {
+	var date = split_data[0].split("-");
+	var year = date[0];
+	var day = date[2];
+	var month = date[1]; 
+	switch (month) {
 		case "01": month = "Jan"; break;
 		case "02": month = "Feb"; break;
 		case "03": month = "Mar"; break;
@@ -117,11 +117,11 @@ function displayMyPos() {
 		case "11": month = "Nov"; break;
 		case "12": month = "Dec"; break;
 	}
-	var date = month + " " + day + ", " + year;
-	var time = ;
-	*/var content_html = '<div class="infowindow">' +
+	date = month + " " + day + ", " + year;
+//	var time = ;
+	var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
-			   '<p>last login: ' + my_data["created_at"] + '</p>' +
+			   '<p>last login: ' + date + '</p>' +
 			   '</div>';
 
 	my_mark = new google.maps.Marker({
