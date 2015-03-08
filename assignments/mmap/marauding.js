@@ -91,7 +91,8 @@ function parseData() {
 }
 
 /* parse value associated with key 'created_at' */
-function parseLastLogin(elem, split_data, date, year, month, day, time) {
+function parseLastLogin(elem) {
+	var split_data, date, year, month, day, time;
 	split_data = pos_data[elem]["created_at"].split("T");
 	date = split_data[0].split("-");
 	year = date[0];
@@ -113,7 +114,7 @@ function parseLastLogin(elem, split_data, date, year, month, day, time) {
 	}
 	date = month + " " + day + ", " + year;
 	time = (split_data[1].split("Z"))[0] + " GMT";
-	return true;
+	return date + " at " + time;
 }
 
 /* displaying my marker and info window on the map */
@@ -140,11 +141,10 @@ function parseLastLogin(elem, split_data, date, year, month, day, time) {
 */
 
 function displayPos(elem) {
-	var split_data, date, year, month, day, time;
-	parseLastLogin(elem, split_data, date, year, month, day, time);
+	var login_time = parseLastLogin(elem);
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + pos_data[elem]["login"] + '</h3>' +
-			   '<p>last login: ' + date + ' at ' + time + '</p>' +
+			   '<p>last login: ' + login_time + '</p>' +
 			   '</div>';
 
 	var marker = new google.maps.Marker({
