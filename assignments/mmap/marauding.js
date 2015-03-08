@@ -160,8 +160,8 @@ function displayPos(elem, date, time) {
 		content: content_html
 	});
 
-	google.maps.event.addListener(other_mark, "click", function() {
-		infowindow.open(mmap, other_mark);
+	google.maps.event.addListener(marker, "click", function() {
+		infowindow.open(mmap, marker);
 	});
 }
 
