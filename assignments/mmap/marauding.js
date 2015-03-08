@@ -18,15 +18,12 @@
 /***** VARIABLES *****/
 var my_lat = 0;
 var my_lng = 0;
-var my_pos = new google.maps.LatLng(my_lat, my_lng);
+var my_pos, position;
 var my_login = "MarkStruthers";
 var my_data;
 var my_mark;
 var mmap;
-var map_options = {
-	center: my_pos,
-	zoom: 8
-};
+var map_options = { zoom: 8 };
 var pos_reqs, pos_data;
 
 
@@ -52,9 +49,11 @@ function findMyPos() {
 }
 
 /* 'success' callback function for getCurrentPosition() */
-function defineMyPos(my_pos) {
-	my_lat = my_pos.coords.latitude;
-	my_lng = my_pos.coords.longitude;
+function defineMyPos(position) {
+	my_lat = position.coords.latitude;
+	my_lng = position.coords.longitude;
+	my_pos = new google.maps.LatLng(my_lat, my_lng);
+	mmap.setCenter(my_pos);
 	updateDataFeed(); // STEP 3
 }
 
