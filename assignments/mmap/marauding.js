@@ -152,13 +152,15 @@ function displayPos(elem, date, time) {
 		map: mmap,
 	});
 
-	if (elem == 0) {
-		marker.setIcon(my_icon);
-	}
 //add miles away
 	var infowindow = new google.maps.InfoWindow({
 		content: content_html
 	});
+
+	if (elem == 0) {
+		marker.setIcon(my_icon);
+		infowindow.open(mmap, marker);
+	}
 
 	google.maps.event.addListener(marker, "click", function() {
 		infowindow.open(mmap, marker);
