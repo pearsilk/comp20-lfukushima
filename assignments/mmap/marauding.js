@@ -103,9 +103,9 @@ function displayMyPos() {
 		icon: my_icon,
 	});
 
-	my_window = {
+	my_window = new google.maps.InfoWindow({
 		content: "Hello world~!"
-	};
+	});
 
 	google.maps.event.addListener(my_mark, "click", function() {
 		my_window.open(mmap, my_mark);
