@@ -109,9 +109,6 @@ function displayMyPos() {
 
 	google.maps.event.addListener(my_mark, "click", function() {
 		my_window.open(mmap, my_mark);
-		google.maps.event.addListener(my_mark, "click", function() {
-			my_window.close();
-		});
 	});
 }
 
