@@ -107,7 +107,7 @@ function displayMyPos() {
 		content: "Hello world~!"
 	});
 
-	google.maps.event.addListener(my_mark, "load", function() {
+	google.maps.event.addListener(my_mark, "tilesloaded", function() {
 		my_window.open(mmap, my_mark);
 	});
 }
