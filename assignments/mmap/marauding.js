@@ -85,9 +85,9 @@ function parseData() {
 		displayMyPos();
 //		displayOtherPos();
 
-		for (elem in pos_data) {
-			console.log(pos_data[elem]['login']);
-		}
+	//	for (elem in pos_data) {
+	//		console.log(pos_data[elem]['login']);
+	//	}
 //		alert(pos_data);
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
@@ -107,7 +107,7 @@ function displayMyPos() {
 		content: "Hello world~!"
 	});
 
-	google.maps.event.addListener(my_mark, "click", function() {
+	google.maps.event.addListener(my_mark, "load", function() {
 		my_window.open(mmap, my_mark);
 	});
 }
