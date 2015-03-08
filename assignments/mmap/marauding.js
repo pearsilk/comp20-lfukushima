@@ -8,10 +8,10 @@
 // - CHECK get my coords. using nav.geo
 // - CHECK send my coord. to database using XMLHttpRequest
 // - CHECK get data back
-// - CHECK make unique MARKER w/ image of choice
+// - CHECK make unique marker w/ image of choice
 // -- CHECK step1: make marker
 // -- CHECK step2: customize
-// - INFO WINDOW w/ note of login 
+// - CHECK info window w/ note of login 
 // - repeat for other people
 // - parse said data
 // - display my location w/ image of my choice w/ note of login
@@ -37,7 +37,6 @@ var split_data, date, year, month, day, time;
 /***** FIRST STEP *****/
 
 /* initializing and loading mmap        */
-/* - load map after finding my position */
 function unfoldMap() {
 	mmap = new google.maps.Map(document.getElementById('marauders-map'), mmap_options);
 	findMyPos();
@@ -82,14 +81,14 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		parseLastLogin();
-		displayMyPos();
-//		displayOtherPos();
-
-	//	for (elem in pos_data) {
-	//		console.log(pos_data[elem]['login']);
-	//	}
-//		alert(pos_data);
+		for (elem in pos_data) {
+			parseLastLogin();
+			if (elem == 0) {
+				displayMyPos();
+			} else {
+		//		displayOtherPos(elem);
+			}
+		}
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
 		console.error("ERROR: ready state = " + pos_reqs.readyState +
@@ -145,6 +144,25 @@ function displayMyPos() {
 	});
 }
 
+function displayOtherPos(elem) {
+	/*var content_html = '<div class="infowindow">' +
+			   '<h3>' + my_data["login"] + '</h3>' +
+			   '<p>last login: ' + date + ' at ' + time + '</p>' +
+			   '</div>';
 
+	my_mark = new google.maps.Marker({
+		position: new google.maps.LatLng(my_data["lat"], my_data["lng"]),
+		map: mmap,
+		icon: my_icon,
+	});
+
+	my_window = new google.maps.InfoWindow({
+		content: content_html
+	});
+
+	google.maps.event.addListener(my_mark, "click", function() {
+		my_window.open(mmap, my_mark);
+	});
+*/}
 
 
