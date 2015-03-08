@@ -22,11 +22,7 @@
 var my_lat, my_lng;
 var my_pos, position;
 var my_login = "MarkStruthers";
-var my_icon = {
-	url: "./takanoha.png",
-	origin: new google.maps.Point(0, 0),
-	anchor: new google.maps.Point(10, 10)
-};
+var my_icon = "./takanoha_small.png";
 var my_data;
 var my_mark;
 var mmap;
