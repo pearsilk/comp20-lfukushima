@@ -25,13 +25,12 @@ var my_lat, my_lng;
 var my_pos, position;
 var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
-var my_info, my_data;
-var my_mark, my_window;
-var other_mark, other_window;
+var my_info;
+//var my_mark, my_window;
+//var other_mark, other_window;
 var mmap;
 var mmap_options = { zoom: 15 };
 var pos_reqs, pos_data;
-var split_data, date, year, month, day, time;
 
 
 /**********************/
@@ -81,14 +80,10 @@ function updateDataFeed() {
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
-		my_data = pos_data[0];
+		var split_data, date, year, month, day, time;
 		for (elem in pos_data) {
-			parseLastLogin();
-			if (elem == 0) {
-				displayMyPos();
-			} else {
-				displayOtherPos(elem);
-			}
+			parseLastLogin(elem, split_data, date, year, month, day, time);
+			displayPos(elem, date, time);
 		}
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
@@ -98,8 +93,8 @@ function parseData() {
 }
 
 /* parse value associated with key 'created_at' */
-function parseLastLogin() {
-	split_data = my_data["created_at"].split("T");
+function parseLastLogin(elem, split_data, date, year, month, day, time) {
+	split_data = pos_data[elem]["created_at"].split("T");
 	date = split_data[0].split("-");
 	year = date[0];
 	day = date[2];
@@ -124,7 +119,7 @@ function parseLastLogin() {
 }
 
 /* displaying my marker and info window on the map */
-function displayMyPos() {
+/*function displayMyPos() {
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
 			   '<p>last login: ' + date + ' at ' + time + '</p>' +
@@ -144,24 +139,29 @@ function displayMyPos() {
 		my_window.open(mmap, my_mark);
 	});
 }
+*/
 
-function displayOtherPos(elem) {
+function displayPos(elem, date, time) {
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + pos_data[elem]["login"] + '</h3>' +
 			   '<p>last login: ' + date + ' at ' + time + '</p>' +
 			   '</div>';
 
-	other_mark = new google.maps.Marker({
+	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(pos_data[elem]["lat"], pos_data[elem]["lng"]),
 		map: mmap,
 	});
+
+	if (elem == 0) {
+		marker.setIcon(my_icon);
+	}
 //add miles away
-	other_window = new google.maps.InfoWindow({
+	var infowindow = new google.maps.InfoWindow({
 		content: content_html
 	});
 
 	google.maps.event.addListener(other_mark, "click", function() {
-		my_window.open(mmap, other_mark);
+		infowindow.open(mmap, other_mark);
 	});
 }
 
