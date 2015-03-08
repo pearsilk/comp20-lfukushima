@@ -12,6 +12,7 @@
 // -- CHECK step1: make marker
 // -- CHECK step2: customize
 // - INFO WINDOW w/ note of login 
+// - repeat for other people
 // - parse said data
 // - display my location w/ image of my choice w/ note of login
 // - display other people's location logins w/ mile(s) away-ness
@@ -22,9 +23,9 @@
 /***** VARIABLES *****/
 var my_lat, my_lng;
 var my_pos, position;
-var my_login = "MarkStruthers";
+var my_logiin = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
-var my_data;
+var my_info, my_data;
 var my_mark;
 var mmap;
 var mmap_options = { zoom: 15 };
@@ -67,19 +68,20 @@ function defineMyPos(position) {
 
 /* sending and retrieving data from datastore */
 function updateDataFeed() {
-	my_data = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
+	my_info = "login=" + my_login + "&lat=" + my_lat + "&lng=" + my_lng;
 	pos_reqs = new XMLHttpRequest();
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	pos_reqs.onreadystatechange = parseData;
-	pos_reqs.send(my_data);
+	pos_reqs.send(my_info);
 }
 
 /* parse the JSON data retrieved from datastore */
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
-
+		my_data = pos_data[0];
+		console.log(my_data);
 		displayMyPos();
 //		displayOtherPos();
 
@@ -100,6 +102,8 @@ function displayMyPos() {
 		map: mmap,
 		icon: my_icon,
 	});
+
+	ass
 }
 
 
