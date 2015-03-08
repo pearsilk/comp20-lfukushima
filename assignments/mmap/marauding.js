@@ -54,7 +54,7 @@ function findMyPos() {
 function defineMyPos(my_pos) {
 	my_lat = my_pos.coords.latitude;
 	my_lng = my_pos.coords.longitude;
-	//updateDataFeed(); // STEP 3
+	updateDataFeed(); // STEP 3
 }
 
 /**********************/
