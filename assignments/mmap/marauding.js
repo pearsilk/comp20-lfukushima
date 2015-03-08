@@ -23,7 +23,7 @@
 /***** VARIABLES *****/
 var my_lat, my_lng;
 var my_pos, position;
-var my_logiin = "MarkStruthers";
+var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
 var my_info, my_data;
 var my_mark;
