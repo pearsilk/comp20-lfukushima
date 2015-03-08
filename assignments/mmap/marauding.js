@@ -73,8 +73,11 @@ function updateDataFeed() {
 /* parse the JSON data retrieved from datastore */
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
-		pos_data = pos_reqs.responseText;
-		alert(pos_data);
+		pos_data = JSON.parse(pos_reqs.responseText);
+		for (elem in pos_data) {
+			console.log(pos_data[elem]['login']);
+		}
+//		alert(pos_data);
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
 		console.error("ERROR: ready state = " + pos_reqs.readyState +
