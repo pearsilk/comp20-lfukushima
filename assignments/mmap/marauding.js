@@ -16,24 +16,24 @@
 
 /*********************/
 /***** VARIABLES *****/
-var my_lat = 0;
-var my_lng = 0;
+var my_lat, my_lng;
 var my_pos, position;
 var my_login = "MarkStruthers";
 var my_data;
 var my_mark;
 var mmap;
-var map_options = { zoom: 8 };
+var mmap_options = { zoom: 15 };
 var pos_reqs, pos_data;
 
 
 /**********************/
 /***** FIRST STEP *****/
 
-/* initializing and loading mmap */
+/* initializing and loading mmap        */
+/* - load map after finding my position */
 function unfoldMap() {
-	mmap = new google.maps.Map(document.getElementById('marauders-map'), map_options);
-	findMyPos(); // STEP 2
+	mmap = new google.maps.Map(document.getElementById('marauders-map'), mmap_options);
+	findMyPos();
 }
 
 /***********************/
@@ -53,9 +53,8 @@ function defineMyPos(position) {
 	my_lat = position.coords.latitude;
 	my_lng = position.coords.longitude;
 	my_pos = new google.maps.LatLng(my_lat, my_lng);
-	mmap.setCenter(my_pos);
-	console.log("map centered!");
-	updateDataFeed(); // STEP 3
+	mmap.setCenter(my_pos); // center map on my position
+	updateDataFeed();
 }
 
 /**********************/
@@ -67,7 +66,6 @@ function updateDataFeed() {
 	pos_reqs = new XMLHttpRequest();
 	pos_reqs.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 	pos_reqs.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
 	pos_reqs.onreadystatechange = parseData;
 	pos_reqs.send(my_data);
 }
@@ -77,12 +75,13 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 
-		/*my_mark = new google.maps.Marker({
-			position: ,
+		my_mark = new google.maps.Marker({
+			position: my_pos,
 			map: mmap,
-			title: 
+			title: "BOO",
+			content: "foo!"
 		});
-*/
+
 		for (elem in pos_data) {
 			console.log(pos_data[elem]['login']);
 		}
