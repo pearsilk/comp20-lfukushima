@@ -97,6 +97,11 @@ function parseData() {
 }
 
 function displayMyPos() {
+	var content_html = '<div class="infowindow">' +
+			   '<h3>' + my_login + '</h3>' +
+			   '<p>last login: ' + my_data["created_at"] + '</p>' +
+			   '</div>';
+
 	my_mark = new google.maps.Marker({
 		position: my_pos,
 		map: mmap,
@@ -104,7 +109,7 @@ function displayMyPos() {
 	});
 
 	my_window = new google.maps.InfoWindow({
-		content: "Hello world~!"
+		content: content_html
 	});
 
 	google.maps.event.addListener(my_mark, "click", function() {
