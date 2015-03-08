@@ -119,7 +119,7 @@ function parseLastLogin() {
 		case "12": month = "Dec"; break;
 	}
 	date = month + " " + day + ", " + year;
-	time = split_data[1];
+	time = (split_data[1].split("Z"))[0] + " UTC";
 	return true;
 }
 
