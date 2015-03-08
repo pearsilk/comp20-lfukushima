@@ -26,7 +26,7 @@ var my_pos, position;
 var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
 var my_info, my_data;
-var my_mark;
+var my_mark, my_window;
 var mmap;
 var mmap_options = { zoom: 15 };
 var pos_reqs, pos_data;
@@ -81,7 +81,7 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		console.log(my_data);
+		
 		displayMyPos();
 //		displayOtherPos();
 
@@ -103,7 +103,13 @@ function displayMyPos() {
 		icon: my_icon,
 	});
 
-	ass
+	my_window = {
+		content: "Hello world~!"
+	};
+
+	google.maps.event.addListener(my_mark, "click", function() {
+		my_window.open(mmap, my_mark);
+	});
 }
 
 
