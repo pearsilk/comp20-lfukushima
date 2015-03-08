@@ -119,7 +119,7 @@ function parseLastLogin() {
 		case "12": month = "Dec"; break;
 	}
 	date = month + " " + day + ", " + year;
-	time = (split_data[1].split("Z"))[0] + " UTC";
+	time = (split_data[1].split("Z"))[0] + " GMT";
 	return true;
 }
 
@@ -127,7 +127,7 @@ function parseLastLogin() {
 function displayMyPos() {
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
-			   '<p>last login: ' + time + ' on ' + date + '</p>' +
+			   '<p>last login: ' + date + ' at ' + time + '</p>' +
 			   '</div>';
 
 	my_mark = new google.maps.Marker({
