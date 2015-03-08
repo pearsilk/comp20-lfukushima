@@ -54,6 +54,7 @@ function defineMyPos(position) {
 	my_lng = position.coords.longitude;
 	my_pos = new google.maps.LatLng(my_lat, my_lng);
 	mmap.setCenter(my_pos);
+	console.log("map centered!");
 	updateDataFeed(); // STEP 3
 }
 
