@@ -82,7 +82,7 @@ function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		parseLastLogin(); { // workaround to make displayMyPos wait till parsing is done
+		parseLastLogin(); // workaround to make displayMyPos wait till parsing is done
 		displayMyPos();
 //		displayOtherPos();
 
