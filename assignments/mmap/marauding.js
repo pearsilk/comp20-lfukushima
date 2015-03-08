@@ -30,6 +30,7 @@ var my_mark, my_window;
 var mmap;
 var mmap_options = { zoom: 15 };
 var pos_reqs, pos_data;
+var split_data, date, year, month, day, time;
 
 
 /**********************/
@@ -77,12 +78,11 @@ function updateDataFeed() {
 }
 
 /* parse the JSON data retrieved from datastore */
-var split_data, date, year, month, day, time;
 function parseData() {
 	if (pos_reqs.readyState == 4 && pos_reqs.status == 200) {
 		pos_data = JSON.parse(pos_reqs.responseText);
 		my_data = pos_data[0];
-		parseLastLogin(); // workaround to make displayMyPos wait till parsing is done
+		parseLastLogin();
 		displayMyPos();
 //		displayOtherPos();
 
@@ -119,7 +119,7 @@ function parseLastLogin() {
 		case "12": month = "Dec"; break;
 	}
 	date = month + " " + day + ", " + year;
-//	var time = ;
+	time = split_data[1];
 	return true;
 }
 
@@ -127,7 +127,7 @@ function parseLastLogin() {
 function displayMyPos() {
 	var content_html = '<div class="infowindow">' +
 			   '<h3>' + my_data["login"] + '</h3>' +
-			   '<p>last login: ' + date + '</p>' +
+			   '<p>last login: ' + time + ' on ' + date + '</p>' +
 			   '</div>';
 
 	my_mark = new google.maps.Marker({
