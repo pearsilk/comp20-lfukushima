@@ -89,7 +89,7 @@ function displayPos(elem) {
 	var distance = milesAway(elem);
 	var login_time = parseLastLogin(elem);
 	var content_html = '<div class="infowindow">' +
-			   '<h3>' + pos_data[elem]["login"] + ' <h2>' + distance + '</h2></h3>' +
+			   '<h3>' + pos_data[elem]["login"] + ' <h4>' + distance + '</h4></h3>' +
 			   '<p>last login: ' + login_time + '</p>' +
 			   '</div>';
 
