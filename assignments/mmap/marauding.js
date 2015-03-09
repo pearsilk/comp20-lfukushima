@@ -1,7 +1,7 @@
 /* Assignment 2 - Marauder's Map */
 /* COMP 20 - Spring 2015         */
 /* Lisa Fukushima                */
-/* Last Updated: March 7, 2015   */
+/* Last Updated: March 8, 2015   */
 
 // TO DO
 // - CHECK load map
@@ -12,25 +12,19 @@
 // -- CHECK step1: make marker
 // -- CHECK step2: customize
 // - CHECK info window w/ note of login 
-// - repeat for other people
-// - parse said data
-// - display my location w/ image of my choice w/ note of login
-// - display other people's location logins w/ mile(s) away-ness
-
-// anon username = MarkStruthers
+// - CHECK repeat for other people
+// - CHECK parse said data
+// - CHECK display my location w/ image of my choice w/ note of login
+// - CHECK display other people's location logins w/ mile(s) away-ness
+// - calculate and show miles away-ness
 
 /*********************/
 /***** VARIABLES *****/
-var my_lat, my_lng;
-var my_pos, position;
+var my_lat, my_lng, my_pos, my_info;
 var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
-var my_info;
-//var my_mark, my_window;
-//var other_mark, other_window;
-var mmap;
-var mmap_options = { zoom: 15 };
-var pos_reqs, pos_data;
+var mmap, mmap_options = { zoom: 15 };
+var position, pos_reqs, pos_data;
 
 
 /**********************/
@@ -90,7 +84,66 @@ function parseData() {
 	}	
 }
 
-/* parse value associated with key 'created_at' */
+//add miles away
+function displayPos(elem) {
+	var distance = milesAway(elem);
+	var login_time = parseLastLogin(elem);
+	var content_html = '<div class="infowindow">' +
+			   '<h3>' + pos_data[elem]["login"] + ' ' + distance + '</h3>' +
+			   '<p>last login: ' + login_time + '</p>' +
+			   '</div>';
+
+	var marker = new google.maps.Marker({
+		position: new google.maps.LatLng(pos_data[elem]["lat"], pos_data[elem]["lng"]),
+		map: mmap,
+	});
+
+	var infowindow = new google.maps.InfoWindow({
+		content: content_html
+	});
+
+	// pos_data[0] is me!
+	if (elem == 0) {
+		marker.setIcon(my_icon);
+		infowindow.open(mmap, marker);
+	}
+
+	google.maps.event.addListener(marker, "click", function() {
+		infowindow.open(mmap, marker);
+	});
+}
+
+/* calculating the distance of others' location from me */
+function milesAway(elem) {
+	var distance = "(Me!)";
+
+	// Haversine Formula
+	var lat1, lat2, dLat, dLng, a, c, kmD, miD;
+	var kmR = 6371; // mean radius of Earth in km
+	var to_miles = 0.621371; // conversion factor from km to miles
+	if (elem != 0) {
+		lat1 = toRadians(pos_data[0]["lat"]);
+		lat2 = toRadians(pos_data[elem]["lat"]);
+		dLat = toRadians(pos_data[elem]["lat"] - pos_data[0]["lat"]);
+		dLng = toRadians(pos_data[elem]["lng"] - pos_data[0]["lng"]);
+		a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + 
+			Math.cos(lat1) * Math.cos(lat2) *
+			Math.sin(dLng / 2) * Math.sin(dLng / 2);
+		c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		kmD = kmR * c;
+		miD = kmD * to_miles;
+		distance = "(~" + miD + " [" + kmD + "] away from me)";
+	}
+
+	return distance;
+}
+
+/* simple conversion to radians function */
+function toRadians(x) {
+	return x * Math.PI / 180;
+}
+
+/* parse date+time value associated with key 'created_at' */
 function parseLastLogin(elem) {
 	var split_data, date, year, month, day, time;
 	split_data = pos_data[elem]["created_at"].split("T");
@@ -117,54 +170,5 @@ function parseLastLogin(elem) {
 	return date + " at " + time;
 }
 
-/* displaying my marker and info window on the map */
-/*function displayMyPos() {
-	var content_html = '<div class="infowindow">' +
-			   '<h3>' + my_data["login"] + '</h3>' +
-			   '<p>last login: ' + date + ' at ' + time + '</p>' +
-			   '</div>';
-
-	my_mark = new google.maps.Marker({
-		position: new google.maps.LatLng(my_data["lat"], my_data["lng"]),
-		map: mmap,
-		icon: my_icon,
-	});
-
-	my_window = new google.maps.InfoWindow({
-		content: content_html
-	});
-
-	google.maps.event.addListener(my_mark, "click", function() {
-		my_window.open(mmap, my_mark);
-	});
-}
-*/
-
-function displayPos(elem) {
-	var login_time = parseLastLogin(elem);
-	var content_html = '<div class="infowindow">' +
-			   '<h3>' + pos_data[elem]["login"] + '</h3>' +
-			   '<p>last login: ' + login_time + '</p>' +
-			   '</div>';
-
-	var marker = new google.maps.Marker({
-		position: new google.maps.LatLng(pos_data[elem]["lat"], pos_data[elem]["lng"]),
-		map: mmap,
-	});
-
-//add miles away
-	var infowindow = new google.maps.InfoWindow({
-		content: content_html
-	});
-
-	if (elem == 0) {
-		marker.setIcon(my_icon);
-		infowindow.open(mmap, marker);
-	}
-
-	google.maps.event.addListener(marker, "click", function() {
-		infowindow.open(mmap, marker);
-	});
-}
 
 
