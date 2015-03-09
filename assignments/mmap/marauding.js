@@ -142,21 +142,16 @@ function toRadians(x) {
 	return x * Math.PI / 180;
 }
 
-/* truncating value to four integers */
+/* truncating value to four values after decimal point */
 function truncate(x) {
-	split_x = (x.toString()).split("");
-	var str_x = "";
-	var i = 0, counter = 0;
-	while (counter < 5) {
-		if (split_x[i] != "." || split_x[0] != "0") {
-			counter++;
-		}
-		if (i == 4 && split_x[i] == ".") {
-			break;
-		}
-		str_x += split_x[i++];
-	}
-	return str_x;
+	var split_x = (x.toString()).split(".");
+	var split_decimal = (split_x[1]).split("");
+	var str_x = split_x[0] + ".";
+	var str_decimal = split_decimal[0] + split_decimal[1] + split_decimal[2] +
+		          split_decimal[3] + split_decimal[4];
+	var decimal = Math.round(parseInt(str_decimal));
+	var str_distance = str_x + decimal.toString(decimal);
+	return str_distance;
 }
 
 /* parse date+time value associated with key 'created_at' */
