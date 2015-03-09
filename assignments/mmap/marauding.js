@@ -89,7 +89,7 @@ function displayPos(elem) {
 	var distance = milesAway(elem);
 	var login_time = parseLastLogin(elem);
 	var content_html = '<div class="infowindow">' +
-			   '<h3>' + pos_data[elem]["login"] + ' ' + distance + '</h3>' +
+			   '<h3>' + pos_data[elem]["login"] + ' <h2>' + distance + '</h2></h3>' +
 			   '<p>last login: ' + login_time + '</p>' +
 			   '</div>';
 
@@ -142,7 +142,7 @@ function toRadians(x) {
 	return x * Math.PI / 180;
 }
 
-/* truncating value to four values after decimal point */
+/* truncate value to four values after decimal point */
 function truncate(x) {
 	var split_x = (x.toString()).split(".");
 	var split_decimal = (split_x[1]).split("");
