@@ -143,7 +143,7 @@ function toRadians(x) {
 }
 
 /* rounding value to four integers */
-function truncate(x) {
+function round(x) {
 	split_x = x.split("");
 	var new_x = "";
 	var i = 0;
