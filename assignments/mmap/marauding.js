@@ -147,7 +147,7 @@ function truncate(x) {
 	split_x = (x.toString()).split("");
 	var str_x = "";
 	var i = 0, counter = 0;
-	while (counter < 4) {
+	while (counter < 5) {
 		if (split_x[i] != "." || split_x[0] != "0") {
 			counter++;
 		}
