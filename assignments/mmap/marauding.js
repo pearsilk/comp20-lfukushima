@@ -153,6 +153,10 @@ function round(x) {
 		}
 		str_x += split_x[i++];
 	}
+	console.log(str_x);
+	var new_x = parseInt(str_x);
+	console.log(new_x);
+	var new_x2 = Math.round(new_x);
 	return Math.round(parseInt(str_x));
 }
 
