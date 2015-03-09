@@ -84,7 +84,7 @@ function parseData() {
 	}	
 }
 
-//add miles away
+/* display the marker and infowindow of each person in pos_data */
 function displayPos(elem) {
 	var distance = milesAway(elem);
 	var login_time = parseLastLogin(elem);
@@ -102,8 +102,7 @@ function displayPos(elem) {
 		content: content_html
 	});
 
-	// pos_data[0] is me!
-	if (elem == 0) {
+	if (elem == 0) { // pos_data[0] is me!
 		marker.setIcon(my_icon);
 		infowindow.open(mmap, marker);
 	}
@@ -130,8 +129,8 @@ function milesAway(elem) {
 			Math.cos(lat1) * Math.cos(lat2) *
 			Math.sin(dLng / 2) * Math.sin(dLng / 2);
 		c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		kmD = kmR * c;
-		miD = kmD * to_miles;
+		kmD = round(kmR * c);
+		miD = round(kmD * to_miles);
 		distance = "(~" + miD + " miles [" + kmD + " km] away from me)";
 	}
 
@@ -141,6 +140,21 @@ function milesAway(elem) {
 /* simple conversion to radians function */
 function toRadians(x) {
 	return x * Math.PI / 180;
+}
+
+/* rounding value to four integers */
+function truncate(x) {
+	split_x = x.split("");
+	var new_x = "";
+	var i = 0;
+	while (counter < 5) {
+		if (split_x[i] != ".") {
+			counter++;
+		}
+		new_x += split_x[i++];
+	}
+	Math.round(new_x);
+	return new_x;
 }
 
 /* parse date+time value associated with key 'created_at' */
