@@ -132,7 +132,7 @@ function milesAway(elem) {
 		c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 		kmD = kmR * c;
 		miD = kmD * to_miles;
-		distance = "(~" + miD + " [" + kmD + "] away from me)";
+		distance = "(~" + miD + " miles [" + kmD + " km] away from me)";
 	}
 
 	return distance;
