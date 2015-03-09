@@ -151,6 +151,9 @@ function truncate(x) {
 		if (split_x[i] != "." || split_x[0] != "0") {
 			counter++;
 		}
+		if (split_x[4] == ".") {
+			break;
+		}
 		str_x += split_x[i++];
 	}
 	return str_x;
