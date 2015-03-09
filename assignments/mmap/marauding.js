@@ -145,16 +145,15 @@ function toRadians(x) {
 /* rounding value to four integers */
 function round(x) {
 	split_x = (x.toString()).split("");
-	var new_x = "";
+	var str_x = "";
 	var i = 0, counter = 0;
 	while (counter < 4) {
 		if (split_x[i] != "." || split_x[0] != "0") {
 			counter++;
 		}
-		new_x += split_x[i++];
+		str_x += split_x[i++];
 	}
-	Math.round(new_x);
-	return new_x;
+	return Math.round(parseInt(str_x));
 }
 
 /* parse date+time value associated with key 'created_at' */
