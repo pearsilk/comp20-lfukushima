@@ -146,7 +146,7 @@ function toRadians(x) {
 function round(x) {
 	split_x = (x.toString()).split("");
 	var new_x = "";
-	var i = 0;
+	var i = 0, counter = 0;
 	while (counter < 5) {
 		if (split_x[i] != ".") {
 			counter++;
