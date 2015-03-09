@@ -16,28 +16,21 @@
 // - CHECK parse said data
 // - CHECK display my location w/ image of my choice w/ note of login
 // - CHECK display other people's location logins w/ mile(s) away-ness
-// - calculate and show miles away-ness
+// - CHECK calculate and show miles away-ness
 
-/*********************/
-/***** VARIABLES *****/
+// Style the formatting~!
+
 var my_lat, my_lng, my_pos, my_info;
 var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
 var mmap, mmap_options = { zoom: 15 };
 var position, pos_reqs, pos_data;
 
-
-/**********************/
-/***** FIRST STEP *****/
-
-/* initializing and loading mmap        */
+/* initializing and loading mmap */
 function unfoldMap() {
 	mmap = new google.maps.Map(document.getElementById('marauders-map'), mmap_options);
 	findMyPos();
 }
-
-/***********************/
-/***** SECOND STEP *****/
 
 /* getting my coordinates */
 function findMyPos() {
@@ -56,9 +49,6 @@ function defineMyPos(position) {
 	mmap.setCenter(my_pos); // center and load map on my position
 	updateDataFeed();
 }
-
-/**********************/
-/***** THIRD STEP *****/
 
 /* sending and retrieving data from datastore */
 function updateDataFeed() {
@@ -89,7 +79,8 @@ function displayPos(elem) {
 	var distance = milesAway(elem);
 	var login_time = parseLastLogin(elem);
 	var content_html = '<div class="infowindow">' +
-			   '<h3>' + pos_data[elem]["login"] + ' <h4>' + distance + '</h4></h3>' +
+			   '<h3>' + pos_data[elem]["login"] +
+			   ' <h4>' + distance + '</h4></h3>' +
 			   '<p>last login: ' + login_time + '</p>' +
 			   '</div>';
 
