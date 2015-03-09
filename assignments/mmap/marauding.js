@@ -146,11 +146,9 @@ function toRadians(x) {
 function truncate(x) {
 	var split_x = (x.toString()).split(".");
 	var split_decimal = (split_x[1]).split("");
-	var str_x = split_x[0] + ".";
-	var str_decimal = split_decimal[0] + split_decimal[1] + split_decimal[2] +
-		          split_decimal[3] + split_decimal[4];
-	var decimal = Math.round(parseInt(str_decimal));
-	var str_distance = str_x + decimal.toString();
+	var str_integer = split_x[0] + ".";
+	var str_decimal = split_decimal[0] + split_decimal[1] + split_decimal[2] + split_decimal[3];
+	var str_distance = str_integer + str_decimal; 
 	return str_distance;
 }
 
