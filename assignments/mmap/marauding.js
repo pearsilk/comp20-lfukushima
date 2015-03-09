@@ -150,7 +150,7 @@ function truncate(x) {
 	var str_decimal = split_decimal[0] + split_decimal[1] + split_decimal[2] +
 		          split_decimal[3] + split_decimal[4];
 	var decimal = Math.round(parseInt(str_decimal));
-	var str_distance = str_x + decimal.toString(decimal);
+	var str_distance = str_x + decimal.toString();
 	return str_distance;
 }
 
