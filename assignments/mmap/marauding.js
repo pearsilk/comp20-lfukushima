@@ -129,8 +129,8 @@ function milesAway(elem) {
 			Math.cos(lat1) * Math.cos(lat2) *
 			Math.sin(dLng / 2) * Math.sin(dLng / 2);
 		c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		kmD = round(kmR * c);
-		miD = round(kmD * to_miles);
+		kmD = truncate(kmR * c);
+		miD = truncate(kmD * to_miles);
 		distance = "(~" + miD + " miles [" + kmD + " km] away from me)";
 	}
 
@@ -142,22 +142,18 @@ function toRadians(x) {
 	return x * Math.PI / 180;
 }
 
-/* rounding value to four integers */
-function round(x) {
+/* truncating value to four integers */
+function truncate(x) {
 	split_x = (x.toString()).split("");
 	var str_x = "";
 	var i = 0, counter = 0;
-	while (counter < 5) {
+	while (counter < 4) {
 		if (split_x[i] != "." || split_x[0] != "0") {
 			counter++;
 		}
 		str_x += split_x[i++];
 	}
-	console.log(str_x);
-	var new_x = parseInt(str_x);
-	console.log(new_x);
-	var new_x2 = Math.round(new_x);
-	return Math.round(parseInt(str_x));
+	return str_x;
 }
 
 /* parse date+time value associated with key 'created_at' */
