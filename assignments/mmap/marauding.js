@@ -144,7 +144,7 @@ function toRadians(x) {
 
 /* rounding value to four integers */
 function round(x) {
-	split_x = x.split("");
+	split_x = (x.toString()).split("");
 	var new_x = "";
 	var i = 0;
 	while (counter < 5) {
