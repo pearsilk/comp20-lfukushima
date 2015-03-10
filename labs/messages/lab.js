@@ -26,10 +26,7 @@ function parseData() {
 		msg_block = document.getElementById("messages");
 		msg_block.innerHTML = msg_style;
 	} else if (request.readyState == 4 && request.status != 200) {
-		console.log("ERROR: ready state = ", request.readyState, " status code = ", request.status);
 		var err_msg_block = document.getElementById("messages");
-		var err_msg = "<p>Oh no! An error occurred . . . </p><p>ready state = " + request.readyState
-			      + "</p><p>status code = " + request.status + "</p>";
-		err_msg_block.innerHTML = err_msg;
+		err_msg_block.innerHTML = "<p><p>Oh no! An error occurred . . . </p></p>";
 	}
 }
