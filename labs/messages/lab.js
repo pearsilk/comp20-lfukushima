@@ -5,8 +5,8 @@
 
 var request;
 function parse() {
-	var req_url = "./data.json"; // local file
-	//var req_url = "http://messagehub.herokuapp.com/messages.json"; // remote file
+	//var req_url = "./data.json"; // local file
+	var req_url = "http://messagehub.herokuapp.com/messages.json"; // remote file
 	request = new XMLHttpRequest();
 	request.open("GET", req_url, true);
 	request.onreadystatechange = parseData;
