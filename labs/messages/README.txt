@@ -8,11 +8,11 @@ I worked alone on this assignment
 QUESTION: Is it possible to request the data from a different origin (e.g.,
 http://messagehub.herokuapp.com/) or from your local machine (from file:///)
 from using XMLHttpRequest? Why or why not? 
---> ANSWER: 
+--> ANSWER: A big N-O-P-E because of the “same origin policy” which is a security measure that restricts how documents and scripts of one origin (origin = same protocol, port, AND host) interact with resources from another origin. This helps prevent malicious sites from accessing sensitive data like cookies, privacy, and personal info that we may have cached/stored/what-have-you on sites like facebook, online banking, etc.
 
-Last Updated: March 6, 2015
+Last Updated: March 9, 2015
 
-HOURS: 4
+HOURS: 5
 
 VALIDATORS
 - http://www.jslint.com/#JSLINT_OPTIONS
