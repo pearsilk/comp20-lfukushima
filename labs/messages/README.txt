@@ -24,3 +24,6 @@ REFERENCES
 - http://overapi.com/css/
 - http://davidwalsh.name/css-circles
 - https://css-tricks.com/almanac/properties/b/border-radius/
+- https://en.wikipedia.org/wiki/XMLHttpRequest
+- https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+- https://security.stackexchange.com/questions/8264/why-is-the-same-origin-policy-so-important
