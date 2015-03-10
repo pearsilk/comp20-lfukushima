@@ -26,6 +26,7 @@ function parseData() {
 		msg_block = document.getElementById("messages");
 		msg_block.innerHTML = msg_style;
 	} else if (request.readyState == 4 && request.status != 200) {
-		var document.getElementById("messages").innerHTML = "<p>Oh no! An error occurred . . . </p>";
+		var err_msg_block = document.getElementById("messages");
+		err_msg_block.innerHTML = "<p>Oh no! An error occurred . . . </p>";
 	}
 }
