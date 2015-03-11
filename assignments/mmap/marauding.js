@@ -69,8 +69,6 @@ function parseData() {
 		}
 	} else if (pos_reqs.readyState == 4 && pos_reqs.status != 200){
 		alert("Oh no, an error occurred!");
-		console.error("ERROR: ready state = " + pos_reqs.readyState +
-			     ", status = " + pos_reqs.status);
 	}	
 }
 
@@ -93,7 +91,7 @@ function displayPos(elem) {
 		content: content_html
 	});
 
-	if (elem == 0) { // pos_data[0] is me!
+	if (pos_data[elem]["login"] == my_login) {
 		marker.setIcon(my_icon);
 		infowindow.open(mmap, marker);
 	}
