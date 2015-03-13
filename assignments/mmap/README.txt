@@ -2,10 +2,9 @@ ASSIGNMENT 2 - MARAUDER'S MAP
 COMP 20 - Spring 2015
 
 Lisa Fukushima
-Completed:
-Last Updated: 
+Last Updated: March 12, 2015
 
-HOURS: 16 so far...
+HOURS: 16
 
 As far as I know, I feel that everything has been implemented correctly.
 I worked on this assignment alone.

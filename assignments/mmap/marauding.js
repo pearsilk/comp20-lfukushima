@@ -1,25 +1,9 @@
 /* Assignment 2 - Marauder's Map */
 /* COMP 20 - Spring 2015         */
 /* Lisa Fukushima                */
-/* Last Updated: March 8, 2015   */
+/* Last Updated: March 11, 2015   */
 
-// TO DO
-// - CHECK load map
-// - CHECK get my coords. using nav.geo
-// - CHECK send my coord. to database using XMLHttpRequest
-// - CHECK get data back
-// - CHECK make unique marker w/ image of choice
-// -- CHECK step1: make marker
-// -- CHECK step2: customize
-// - CHECK info window w/ note of login 
-// - CHECK repeat for other people
-// - CHECK parse said data
-// - CHECK display my location w/ image of my choice w/ note of login
-// - CHECK display other people's location logins w/ mile(s) away-ness
-// - CHECK calculate and show miles away-ness
-
-// Style the formatting~!
-
+/* global variables */
 var my_lat, my_lng, my_pos, my_info;
 var my_login = "MarkStruthers";
 var my_icon = "./takanoha_small.png"; // this is my family crest, I really like it 
@@ -126,7 +110,7 @@ function milesAway(elem) {
 	return distance;
 }
 
-/* simple conversion to radians function */
+/* simple conversion to radians */
 function toRadians(x) {
 	return x * Math.PI / 180;
 }
@@ -134,10 +118,10 @@ function toRadians(x) {
 /* truncate value to four values after decimal point */
 function truncate(x) {
 	var split_x = (x.toString()).split(".");
-	var split_decimal = (split_x[1]).split("");
-	var str_integer = split_x[0] + ".";
-	var str_decimal = split_decimal[0] + split_decimal[1] + split_decimal[2] + split_decimal[3];
-	var str_distance = str_integer + str_decimal; 
+	var split_dec = (split_x[1]).split("");
+	var str_int = split_x[0] + ".";
+	var str_dec = split_dec[0] + split_dec[1] + split_dec[2] + split_dec[3];
+	var str_distance = str_int + str_dec; 
 	return str_distance;
 }
 
